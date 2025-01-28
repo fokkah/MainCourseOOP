@@ -35,7 +35,7 @@ public class Person {
 
     public void setFirstName(String firstName) {
         //this.firstName = firstName;
-        if (firstName == null || firstName.isEmpty()) {
+        if (firstName == null || firstName.trim().isEmpty()) {
             throw new IllegalArgumentException("Field cannot be empty or null");
         }
         this.firstName = firstName;
