@@ -42,7 +42,7 @@ public class Person {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        //this.lastName = lastName;
         if (lastName == null || lastName.trim().isEmpty()) {
 
             throw new IllegalArgumentException("Field cannot be empty or null");
