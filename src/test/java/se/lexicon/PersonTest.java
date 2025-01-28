@@ -8,11 +8,27 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
 
-    @org.junit.jupiter.api.Test
-    void setFirstName() {
+    Person testObject;
+
+    @Test
+    void setValidFirstName() {
+        String expextedFN = "TAMAS";
+        testObject = new Person("Tamas", "Test", "test@test.se", 1);
+        testObject.setFirstName("TAMAS");
+        assertEquals(expextedFN, testObject.getFirstName());
+
     }
 
-    @org.junit.jupiter.api.Test
+
+    @Test
+    void setInValidFirstName() {
+        String expextedFN = "Tamas";
+        testObject = new Person("Tamas", "Test", "test@test.se", 1);
+        testObject.setFirstName("TAMAS");
+        assertNotEquals(expextedFN, testObject.getFirstName());
+    }
+
+    @Test
     void setLastName() {
     }
 

@@ -2,6 +2,8 @@ package se.lexicon;
 
 public class Person {
 
+    //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    //-------------------------------------- Fields -------------------------------------------------------
     private int id;
 
     private String firstName;
@@ -10,15 +12,31 @@ public class Person {
 
     private String eMail;
 
-    private String summary;
+    //-------------------------------------- Fields END-------------------------------------------------------
+    //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    //------------------------- Constructors -----------------------------------------------------------
 
+    public Person(String firstName, String lastName, String eMail, int id){ // null, null
+        this.id = id;
+        // this.firstName = firstName;
+        this.setFirstName(firstName);
+        //this.lastName = lastName;
+        this.setLastName(lastName);
+        this.seteMail(eMail);
+
+    }
+    public String summary(){
+        return  "ID:"+id+ " Name: " + firstName+""+lastName+ "," + " e-Mail:" + eMail;
+    }
+
+    //------------------------- Constructors END -----------------------------------------------------------
+    //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //--------------- SETTERS -------------------------------------------------------------------------
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        //this.firstName = firstName;
         if (firstName == null || firstName.isEmpty()) {
             throw new IllegalArgumentException("Field cannot be empty or null");
-
         }
         this.firstName = firstName;
     }
@@ -33,15 +51,15 @@ public class Person {
     }
 
     public void seteMail(String eMail) {
-        this.eMail = eMail;
-        if (eMail == null || eMail.isEmpty()) {
+        // todo: do the same for all other setters
+        //this.eMail = eMail;
+        if (eMail == null || eMail.trim().isEmpty()) {
             throw new IllegalArgumentException("Field must have @, and cannot be null or empty");
-
         }
         this.eMail = eMail;
     }
     //----------------------- SETTERS END -----------------------------------------------------------------
-
+    //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //----------------------- GETTERS ---------------------------------------------------------------------
 
     public int getId() {
@@ -61,55 +79,10 @@ public class Person {
         return eMail;
     }
 
-    public String getSummary() {
-        return summary;
-    }
+    //----------------------- GETTERS END---------------------------------------------------------------------
 
 
-
-/*
-    public int getId() {
-        return id;
-    }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setEmail(String eMail) {
-        this.eMail = eMail;
-    }
-
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String geteMail() {
-        return eMail;
-    }
-
-    public String getSummary() {
-        return summary;
-    }
-     */
-
-    public Person(String firstName, String lastName, String eMail, int id){
-        this.id = id;
-        this.firstName = "First name: " + firstName;
-        this.lastName = "Last name: " +  lastName;
-        this.eMail = "e-Mail: " + eMail;
-        this.summary = "ID:"+id+ " Name: " + firstName+""+lastName+ "," + " e-Mail:" + eMail;
-
-
-    }
 
 }
 
+    //------------------------------- END OF FILE --------------------------------------------------------
