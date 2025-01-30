@@ -16,7 +16,6 @@ public class Main {
         //System.out.println(todoItem.getWhoisDoing());
         //System.out.println(todoItem.getDeadLine());
         // System.out.println(todoItem.getDeadLine());
-        System.out.println(todoItem.isDoneOrNotdone());
 
 
 

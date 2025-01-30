@@ -11,7 +11,6 @@ public class TodoItem {
     private String xtraInfo;
     private LocalDate deadLine;
     private String whoisDoing;
-    private boolean doneOrNotdone;
 
     //------------------------------------------ Fields End -----------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -30,16 +29,7 @@ public class TodoItem {
         return "ID:" + id + "Current date: " + LocalDate.now();
     }
 
-    public TodoItem(boolean doneOrNotdone, LocalDate deadLine, int id) {
-        this.doneOrNotdone = doneOrNotdone;
-        this.id = id;
-        this.deadLine = deadLine;
-    }
 
-    public void setDoneOrNotdone(boolean doneOrNotdone, LocalDate deadLine) {
-        this.doneOrNotdone = doneOrNotdone;
-        this.deadLine = deadLine;
-    }
 
 //---------------------------- Constructors End --------------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -75,14 +65,6 @@ public class TodoItem {
         this.whoisDoing = whoisDoing;
     }
 
-    public void setDoneOrNotdone(boolean doneOrNotdone) {
-        if (deadLine.isAfter(LocalDate.now())) {
-            System.out.println("Not done");
-        }else System.out.println("Done");
-
-        this.doneOrNotdone = doneOrNotdone;
-    }
-
     //--------------------------------------- Setters End --------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //--------------------------------------- Getters --------------------------------------------------------
@@ -108,11 +90,6 @@ public class TodoItem {
         return whoisDoing;
     }
 
-    public boolean isDoneOrNotdone() {
-        if (deadLine.isAfter(LocalDate.now())) {
-            return true;
-        }else return false;
-    }
 
     public String getSummary() {
         return ("ID: " + id + "\nOrder: " + title + "\nAdditional infromation: " + xtraInfo +
