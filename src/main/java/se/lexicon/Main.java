@@ -10,13 +10,8 @@ public class Main {
         Person anna = new Person("Anna ", "Olsson", "anna@gmail.com ",  2);
         Person anders = new Person("Anders ", "Fredriksson", " anders@gmail.com", 3);
         TodoItem todoItem;
-        todoItem = new TodoItem("Win CL", "What evs", LocalDate.now(), "Anders", 3);
-
-        //System.out.println(todoItem.getSummary());
-        //System.out.println(todoItem.getWhoisDoing());
-        //System.out.println(todoItem.getDeadLine());
-        // System.out.println(todoItem.getDeadLine());
-
+        TodoItemTask todoItemTask;
+        TodoItemTask as
 
 
 
@@ -31,6 +26,25 @@ public class Main {
         //System.out.println(anna.getLastName());
         //System.out.println(anna.geteMail());
         //System.out.println(anna.getSummary());
+
+
+
+        //System.out.println(todoItem.getSummary());
+        //System.out.println(todoItem.getWhoisDoing());
+        //System.out.println(todoItem.getDeadLine());
+        // System.out.println(todoItem.getDeadLine());
+        //System.out.println(todoItem.getTitle());
+
+
+
+
+        //System.out.println(todoItem.getTitle());
+        //System.out.println(todoItem.getTitle());
+        //System.out.println(todoItem.getTitle());
+        //System.out.println(todoItem.getTitle());
+        //System.out.println(todoItem.getTitle());
+
+
 
 
 
