@@ -50,6 +50,7 @@ public class Person {
         this.lastName = lastName;
     }
 
+
     public void seteMail(String eMail) {
         // todo: do the same for all other setters
         //this.eMail = eMail;
@@ -57,6 +58,8 @@ public class Person {
             throw new IllegalArgumentException("Field must have @, and cannot be null or empty");
         }
         this.eMail = eMail;
+
+
     }
     //----------------------- SETTERS END -----------------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -77,6 +80,10 @@ public class Person {
 
     public String geteMail() {
         return eMail;
+    }
+
+    public String getSummary(){
+        return summary();
     }
 
     //----------------------- GETTERS END---------------------------------------------------------------------
