@@ -5,13 +5,11 @@ import java.time.LocalDate;
 public class TodoItem {
 
 
-
     //----------------------------------------------- Fields --------------------------------------------------
-    private int id;
+    private final int id;
     private String title;
     private String xtraInfo;
     private LocalDate deadLine;
-    private boolean doneOrNot;
     private String whoisDoing;
 
     //------------------------------------------ Fields End -----------------------------------------------------
@@ -19,25 +17,35 @@ public class TodoItem {
     //--------------------------- Constructors -------------------------------------------------------------------
 
 
-    public TodoItem(String title, String xtraInfo, LocalDate deadLine, boolean doneOrNot, String whoisDoing, int id) {
+    public TodoItem(String title, String xtraInfo, LocalDate deadLine, String whoisDoing, int id) {
         setTitle(title);
         this.setXtraInfo(xtraInfo);
         this.setDeadLine(deadLine);
-        this.setDoneOrNot(doneOrNot);
         this.setWhoisDoing("Anders");
         this.id = id;
 
     }
-    public String summary(){
-        return "ID:"+id + "Current date: " + LocalDate.now();
+
+    public String summary() {
+        return "ID:" + id + "Current date: " + LocalDate.now();
     }
-
-
 
 
     //---------------------------- Constructors End --------------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //--------------------------------------- Setters ------------------------------------------------------------
+
+    public boolean setDeadLine(LocalDate deadLine) {
+        System.out.println("Today is " + LocalDate.now() + " and deadline is " + LocalDate.parse("2025-08-02"));
+        boolean deadLineDate = LocalDate.parse("2025-08-02").isBefore(LocalDate.now());
+        LocalDate.now().isAfter(LocalDate.parse("2025-08-02")); {
+            if (deadLineDate == false) {
+            System.out.println("U got time to spare");
+            }
+         else System.out.println("To slow yo!");
+        }
+        return false;
+    }
 
 
     public void setTitle(String title) {
@@ -47,46 +55,12 @@ public class TodoItem {
         this.title = title;
     }
 
-    public void setXtraInfo(String xtraInfo) {
-        System.out.println("Enter valuable information");
-    }
-
-    public boolean setDeadLine(LocalDate deadLine) {
-
-        LocalDate deadLineDate = LocalDate.parse("2025-08-02");
-
-        LocalDate dateOfToday = LocalDate.now();
-        if (dateOfToday.isAfter(deadLineDate)){
-           throw new IllegalStateException("Workorder is overdue! Punishment is at hand");
-        }
-        return getDeadLine().isAfter(LocalDate.now());
-    }
-
-
-
-
-    public void setDoneOrNot(boolean doneOrNot) {
-        int done = 1;
-        if(done > 0) {
-            System.out.println("Workorder is done");
-
-        } else {
-            System.out.println("Workoder isnt done, step up the pace!");
-
-        }
-
-
-
-    }
-
     public void setWhoisDoing(String whoisDoing) {
         setWhoisDoing("Anders");
     }
-
     //--------------------------------------- Setters End --------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //--------------------------------------- Getters --------------------------------------------------------
-
 
     public int getId() {
         return id;
@@ -95,26 +69,28 @@ public class TodoItem {
     public String getTitle() {
         return title;
     }
-
     public String getXtraInfo() {
         return xtraInfo;
     }
 
-    public LocalDate getDeadLine() {
-        LocalDate dateOfToday = LocalDate.now();
-        if (dateOfToday.isAfter(deadLine)){
-        }
-        return deadLine;
+    public void setXtraInfo(String xtraInfo) {
+        System.out.println("Enter valuable information");
     }
 
+    public LocalDate getDeadLine() {
 
+        return deadLine;
+    }
 
     public String getWhoisDoing() {
         return whoisDoing;
     }
 
-    public String getSummary(){
-        return ("ID: " + id + "Order: " + title + "Additional infromation: " + xtraInfo + "Due date: " + deadLine + "Is it done: " + doneOrNot + "Who did this: " + whoisDoing);
+
+    public String getSummary() {
+        return ("ID: " + id + "\nOrder: " + title + "\nAdditional infromation: " + xtraInfo +
+                "\nDue date: " + deadLine + "\nWho did this: " + whoisDoing);
+
     }
 }
 
