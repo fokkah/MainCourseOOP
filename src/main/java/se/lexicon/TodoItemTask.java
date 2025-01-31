@@ -6,7 +6,7 @@ public class TodoItemTask {
 
     private int id;
     private boolean assigned;
-    private TodoItemTask todoItemTask;
+    private TodoItem todoItem;
     private Person assignee;
 
     //------------------------------------------ Fields End -----------------------------------------------------
@@ -14,28 +14,48 @@ public class TodoItemTask {
     //--------------------------- Constructors -------------------------------------------------------------------
 
 
-    public TodoItemTask(int id, TodoItemTask todoItem) {
-        this.id = id;
-        this.todoItemTask = todoItem;
-
+    public TodoItemTask(TodoItem todoItem) {
+        this.todoItem = todoItem;
     }
 
-    public TodoItemTask(Person assignee) {
-        this.assignee = assignee;
+    public String summary(){
+        return "ID: "+id+" Assigned: "+assigned+"What to do: "+todoItem+"Assigne"+assignee;
     }
+
 
     //---------------------------- Constructors End --------------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //--------------------------------------- Setters ------------------------------------------------------------
 
+    public int getId() {
+        return id;
+    }
 
     public void setId(int id) {
         this.id = id;
     }
 
+    private boolean isAssigned() {
+        return assignee != null;
+
+    }
+
+    //--------------------------------------- Setters End --------------------------------------------------------
+    //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    //--------------------------------------- Getters ------------------------------------------------------------
+
+    public TodoItem getTodoItem() {
+        return todoItem;
+    }
+
     public void setTodoItem(TodoItem todoItem) {
-        this.todoItemTask = todoItemTask;
-        System.out.println("U need to finish training to win CL2025");
+        this.todoItem = todoItem;
+        //System.out.println("U need to finish training to win CL2025");
+
+    }
+
+    public Person getAssignee() {
+        return assignee;
     }
 
     public void setAssignee(Person assignee) {
@@ -43,24 +63,7 @@ public class TodoItemTask {
         assignee = new Person("Anders", "Fredriksson", "anders@gmail.com", 3);
     }
 
-    //--------------------------------------- Setters End --------------------------------------------------------
-    //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-    //--------------------------------------- Getters ------------------------------------------------------------
 
-
-    public int getId() {
-        return id;
-    }
-
-    public boolean isAssigned() {
-        return assigned;
-    }
-
-    public TodoItemTask getTodoItemTask() {
-        return todoItemTask;
-    }
-
-    public Person getAssignee() {
-        return assignee;
-    }
 }
+
+

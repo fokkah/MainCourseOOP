@@ -4,19 +4,16 @@ public class Person {
 
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //-------------------------------------- Fields -------------------------------------------------------
-    private int id;
-
+    private final int id;
     private String firstName;
-
     private String lastName;
-
     private String eMail;
 
     //-------------------------------------- Fields END-------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //------------------------- Constructors -----------------------------------------------------------
 
-    public Person(String firstName, String lastName, String eMail, int id){ // null, null
+    public Person(String firstName, String lastName, String eMail, int id) { // null, null
         this.id = id;
         // this.firstName = firstName;
         this.setFirstName(firstName);
@@ -25,13 +22,22 @@ public class Person {
         this.seteMail(eMail);
 
     }
-    public String summary(){
-        return  "ID:"+id+ " Name: " + firstName+""+lastName+ "," + " e-Mail:" + eMail;
+
+    public String summary() {
+        return "ID:" + id + " Name: " + firstName + lastName + "," + " e-Mail:" + eMail;
     }
 
     //------------------------- Constructors END -----------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //--------------- SETTERS -------------------------------------------------------------------------
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
 
     public void setFirstName(String firstName) {
         //this.firstName = firstName;
@@ -39,6 +45,13 @@ public class Person {
             throw new IllegalArgumentException("Field cannot be empty or null");
         }
         this.firstName = firstName;
+    }
+    //----------------------- SETTERS END -----------------------------------------------------------------
+    //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    //----------------------- GETTERS ---------------------------------------------------------------------
+
+    public String getLastName() {
+        return lastName;
     }
 
     public void setLastName(String lastName) {
@@ -50,6 +63,9 @@ public class Person {
         this.lastName = lastName;
     }
 
+    public String geteMail() {
+        return eMail;
+    }
 
     public void seteMail(String eMail) {
         // todo: do the same for all other setters
@@ -61,35 +77,14 @@ public class Person {
 
 
     }
-    //----------------------- SETTERS END -----------------------------------------------------------------
-    //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-    //----------------------- GETTERS ---------------------------------------------------------------------
 
-    public int getId() {
-        return id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-
-    public String geteMail() {
-        return eMail;
-    }
-
-    public String getSummary(){
+    public String getSummary() {
         return summary();
     }
 
     //----------------------- GETTERS END---------------------------------------------------------------------
 
 
-
 }
 
-    //------------------------------- END OF FILE --------------------------------------------------------
+//------------------------------- END OF FILE --------------------------------------------------------
