@@ -12,6 +12,8 @@ public class Main {
         TodoItem item = new TodoItem("Win CL", "what evs", LocalDate.now().plusDays(3), "anders", 3, true);
         TodoItemTask itemTask = new TodoItemTask(item);
         TodoItem itemTwo = new TodoItem("how fast do u run?", "FAST", LocalDate.now().minusDays(1), "botond", 5, true);
+        AppRole userRole;
+        AppRole adminRole;
 
 
         /*
