@@ -37,7 +37,6 @@ public class Main {
         System.out.println(anna.getFirstName());
         System.out.println(anna.getLastName());
         System.out.println(anna.geteMail());
-        System.out.println(anna.getSummary());
 
 
         System.out.println(item.getXtraInfo());
@@ -45,8 +44,9 @@ public class Main {
         System.out.println(item.getDeadLine());
         System.out.println(item.getTitle());
         System.out.println(item.isDone());
-         */
         System.out.println(item.getSummary());
+         */
+        System.out.println(anna.getSummary());
 
 
 

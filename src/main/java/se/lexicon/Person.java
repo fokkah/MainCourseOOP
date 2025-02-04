@@ -8,6 +8,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private String eMail;
+    private AppUser credentials;
 
     //-------------------------------------- Fields END-------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -46,7 +47,11 @@ public class Person {
         }
         this.firstName = firstName;
     }
-    //----------------------- SETTERS END -----------------------------------------------------------------
+
+    public void setCredentials(AppUser credentials) {
+        this.credentials = credentials;
+    }
+//----------------------- SETTERS END -----------------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //----------------------- GETTERS ---------------------------------------------------------------------
 
@@ -79,10 +84,13 @@ public class Person {
     }
 
     public String getSummary() {
-        return summary();
+        return toString(); //summary
     }
 
-    //----------------------- GETTERS END---------------------------------------------------------------------
+    public AppUser getCredentials() {
+        return credentials;
+    }
+//----------------------- GETTERS END---------------------------------------------------------------------
 
 
 }
