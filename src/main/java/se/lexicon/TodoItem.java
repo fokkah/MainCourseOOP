@@ -70,7 +70,17 @@ public class TodoItem {
 
         }return true;
     }
+    public void setXtraInfo(String xtraInfo) {
+        System.out.println("Enter valuable information");
+        this.xtraInfo = xtraInfo;
+    }
 
+    public void setWhoisDoing(String whoisDoing) {
+        if (whoisDoing == null || whoisDoing.trim().isEmpty()) {
+            throw new IllegalArgumentException("Field cannt be null or empty");
+        }
+        this.whoisDoing = whoisDoing;
+    }
 
     //--------------------------------------- Setters End --------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -80,10 +90,6 @@ public class TodoItem {
         return xtraInfo;
     }
 
-    public void setXtraInfo(String xtraInfo) {
-        System.out.println("Enter valuable information");
-        this.xtraInfo = xtraInfo;
-    }
 
     public LocalDate getDeadLine() {
 
@@ -94,25 +100,37 @@ public class TodoItem {
         return whoisDoing;
     }
 
-    public void setWhoisDoing(String whoisDoing) {
-        if (whoisDoing == null || whoisDoing.trim().isEmpty()) {
-            throw new IllegalArgumentException("Field cannt be null or empty");
-        }
-        this.whoisDoing = whoisDoing;
-    }
 
-    public String getSummary() {
-        return ("ID: " + id + "\nOrder: " + title + "\nAdditional infromation: " + xtraInfo +
-                "\nDue date: " + deadLine + "\nWho did this: " + whoisDoing);
-
-    }
+    //public String getSummary() {
+    //    return ("ID: " + id + "\nOrder: " + title + "\nAdditional infromation: " + xtraInfo +
+    //            "\nDue date: " + deadLine + "\nWho did this: " + whoisDoing);
+    //
+    //}
 
     public boolean isDone() {
         return done;
     }
+
+    //----------------------- GETTERS END---------------------------------------------------------------------
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//----------------------- OVERRIDES---------------------------------------------------------------------
+
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
-
-
 
 
 
