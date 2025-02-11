@@ -1,5 +1,10 @@
 package se.lexicon;
 
+import se.lexicon.Todo.AppRole;
+import se.lexicon.Todo.Person;
+import se.lexicon.Todo.TodoItem;
+import se.lexicon.Todo.TodoItemTask;
+
 import java.time.LocalDate;
 
 public class Main {

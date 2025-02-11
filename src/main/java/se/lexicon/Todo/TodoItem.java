@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.Todo;
 
 import java.time.LocalDate;
 
@@ -37,7 +37,7 @@ public class TodoItem {
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //--------------------------------------- Setters ------------------------------------------------------------
 
-    public boolean setDeadLine(LocalDate deadLine) {
+    11111111111111public boolean setDeadLine(LocalDate deadLine) {
         System.out.println("Today is " + LocalDate.now() + " and deadline is 2025-08-02");
         boolean deadLineDate = LocalDate.parse("2024-08-02").isBefore(LocalDate.now());
         LocalDate.now().isAfter(LocalDate.parse("2025-08-02"));
@@ -47,6 +47,9 @@ public class TodoItem {
             } else System.out.println("To slow yo!, deadline was " + LocalDate.parse("2024-08-02"));
         }
         return true;
+    }
+    public boolean isOverdue(){
+        return LocalDate.now().isAfter(deadLine);
     }
 
     public int getId() {

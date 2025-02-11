@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.Todo;
 
 public class TodoItemTask {
 
@@ -60,7 +60,6 @@ public class TodoItemTask {
 
     public void setAssignee(Person assignee) {
         this.assignee = assignee;
-        assignee = new Person("Anders", "Fredriksson", "anders@gmail.com", 3);
     }
 
     //----------------------- GETTERS END-------------------------------------------------------------------------

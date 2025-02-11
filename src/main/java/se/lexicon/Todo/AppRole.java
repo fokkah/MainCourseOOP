@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.Todo;
 
 public enum AppRole {
 

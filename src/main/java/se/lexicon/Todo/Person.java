@@ -1,4 +1,8 @@
-package se.lexicon;
+package se.lexicon.Todo;
+
+import java.util.Objects;
+
+
 
 public class Person {
 
@@ -24,7 +28,7 @@ public class Person {
 
     }
 
-    public String summary() {
+    public String toString() {
         return "ID:" + id + " Name: " + firstName + lastName + "," + " e-Mail:" + eMail;
     }
 
@@ -74,16 +78,18 @@ public class Person {
 
     public void seteMail(String eMail) {
         // todo: do the same for all other setters
-        //this.eMail = eMail;
-        if (eMail == null || eMail.trim().isEmpty()) {
-            throw new IllegalArgumentException("Field must have @, and cannot be null or empty");
-        }
         this.eMail = eMail;
+        //if (eMail == null || eMail.trim().isEmpty()) {
+        //}
+        //this.eMail = eMail;
+        if (eMail == null || eMail.trim().isEmpty() || !eMail.contains("@") || !eMail.contains(".")) {
+          throw new IllegalArgumentException("Field must have @, and cannot be null or empty");
 
+        }
 
     }
 
-    public String getSummary() {
+    public String toString() {
         return toString(); //summary
     }
 
@@ -96,18 +102,18 @@ public class Person {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(id, firstName, lastName, eMail);
     }
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass())return false;
+        Person person = (Person) obj;
+        return id == person.id && firstName.equals(person.firstName) && lastName.equals(person.lastName) && eMail.equals(person.eMail);
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+
 
     //----------------------- OVERRIDES END ---------------------------------------------------------------------
 

@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.Todo;
 
 public class AppUser {
 
@@ -8,18 +8,19 @@ public class AppUser {
 
     private String username;
     private String password;
-    private Enum role;
+    private AppRole role;
 
     //-------------------------------------- Fields END-------------------------------------------------------
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //------------------------- Constructors -----------------------------------------------------------
 
-    public void userInfo(String username, String password){
+    public void userInfo(String username, String password, AppRole role){
         this.username = username;
         this.password = password;
+        this.role = role;
     }
 
-    public AppUser(Enum role) {
+    public AppUser(AppRole role) {
         this.role = role;
     }
 
@@ -44,7 +45,7 @@ public class AppUser {
         }
     }
 
-    public void setRole(Enum role) {
+    public void setRole(AppRole role) {
         this.role = role;
         if (role == null || role.toString().trim().isEmpty()) {
             throw new IllegalArgumentException("Cannot be null or empty");
