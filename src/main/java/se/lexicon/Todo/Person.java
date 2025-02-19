@@ -89,9 +89,9 @@ public class Person {
 
     }
 
-    public String toString() {
-        return toString(); //summary
-    }
+    //public String toString() {
+      //  return toString(); //summary
+    //}
 
     public AppUser getCredentials() {
         return credentials;

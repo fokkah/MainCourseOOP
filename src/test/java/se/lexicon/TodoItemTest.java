@@ -1,10 +1,13 @@
 package se.lexicon;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class TodoItemTest {
+
+    @BeforeEach
+    void setUp() {
+    }
 
     @Test
     void summary() {
@@ -31,11 +34,15 @@ class TodoItemTest {
     }
 
     @Test
-    void getXtraInfo() {
+    void setXtraInfo() {
     }
 
     @Test
-    void setXtraInfo() {
+    void setWhoisDoing() {
+    }
+
+    @Test
+    void getXtraInfo() {
     }
 
     @Test
@@ -47,14 +54,22 @@ class TodoItemTest {
     }
 
     @Test
-    void setWhoisDoing() {
-    }
-
-    @Test
-    void getSummary() {
-    }
-
-    @Test
     void isDone() {
+    }
+
+    @Test
+    void isOverdue() {
+    }
+
+    @Test
+    void testHashCode() {
+    }
+
+    @Test
+    void testEquals() {
+    }
+
+    @Test
+    void testToString() {
     }
 }

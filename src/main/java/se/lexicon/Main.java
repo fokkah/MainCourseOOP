@@ -1,11 +1,12 @@
 package se.lexicon;
 
-import se.lexicon.Todo.AppRole;
-import se.lexicon.Todo.Person;
-import se.lexicon.Todo.TodoItem;
-import se.lexicon.Todo.TodoItemTask;
+import se.lexicon.DAO.AppUserDAOImplementation;
+import se.lexicon.DAO.TodoItemDAOImplementation;
+import se.lexicon.DAO.TodoItemTaskDAO;
+import se.lexicon.Todo.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,13 +15,15 @@ public class Main {
         Person erik = new Person("Erik", "Svensson", "erik@gmail.com ", 1);
         Person anna = new Person("Anna ", "Olsson", "anna@gmail.com ", 2);
         Person anders = new Person("Anders ", "Fredriksson", " anders@gmail.com", 3);
-        TodoItem item = new TodoItem("Win CL", "what evs", LocalDate.now().plusDays(3), "anders", 3, true);
-        TodoItemTask itemTask = new TodoItemTask(item);
-        TodoItem itemTwo = new TodoItem("how fast do u run?", "FAST", LocalDate.now().minusDays(1), "botond", 5, true);
+        //TodoItem item = new TodoItem("Win CL", "what evs", LocalDate.now().plusDays(3), "anders", 3, true);
+        //TodoItemTask itemTask = new TodoItemTask(item);
+        //TodoItem itemTwo = new TodoItem("how fast do u run?", "FAST", LocalDate.now().minusDays(1), "botond", 5, true);
         AppRole userRole;
         AppRole adminRole;
+        //AppUserDAOImplementation appUserDAOImplementation = new AppUserDAOImplementation();
+        //TodoItemDAOImplementation todoItemDAOImplementation = new TodoItemDAOImplementation();
 
-
+        System.out.println();
         /*
         itemTask.setAssignee(anders);
         itemTask.setTodoItem(item);
@@ -51,7 +54,6 @@ public class Main {
         System.out.println(item.isDone());
         System.out.println(item.getSummary());
          */
-        System.out.println(anna.getSummary());
 
 
 

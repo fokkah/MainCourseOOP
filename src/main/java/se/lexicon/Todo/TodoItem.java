@@ -1,5 +1,6 @@
 package se.lexicon.Todo;
 
+import javax.xml.validation.Validator;
 import java.time.LocalDate;
 
 public class TodoItem {
@@ -10,7 +11,7 @@ public class TodoItem {
     private String title;
     private String xtraInfo;
     private LocalDate deadLine;
-    private String whoisDoing;
+    private Person creator;
     private boolean done;
 
     //------------------------------------------ Fields End -----------------------------------------------------
@@ -22,7 +23,7 @@ public class TodoItem {
         setTitle(title);
         this.setXtraInfo(xtraInfo);
         this.setDeadLine(deadLine);
-        this.setWhoisDoing("Anders");
+        this.setCreator(creator);
         this.id = id;
         this.done = done;
 
@@ -37,16 +38,12 @@ public class TodoItem {
     //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     //--------------------------------------- Setters ------------------------------------------------------------
 
-    11111111111111public boolean setDeadLine(LocalDate deadLine) {
-        System.out.println("Today is " + LocalDate.now() + " and deadline is 2025-08-02");
-        boolean deadLineDate = LocalDate.parse("2024-08-02").isBefore(LocalDate.now());
-        LocalDate.now().isAfter(LocalDate.parse("2025-08-02"));
-        {
-            if (!deadLineDate) {
-                System.out.println("U got time to spare");
-            } else System.out.println("To slow yo!, deadline was " + LocalDate.parse("2024-08-02"));
+    public void setDeadLine(LocalDate deadLine) {
+        if (deadLine == null) {
+            throw new IllegalArgumentException("Shouldnt be null");
+
         }
-        return true;
+        this.deadLine = deadLine;
     }
     public boolean isOverdue(){
         return LocalDate.now().isAfter(deadLine);
@@ -78,11 +75,11 @@ public class TodoItem {
         this.xtraInfo = xtraInfo;
     }
 
-    public void setWhoisDoing(String whoisDoing) {
-        if (whoisDoing == null || whoisDoing.trim().isEmpty()) {
-            throw new IllegalArgumentException("Field cannt be null or empty");
+    public void setCreator(Person creator) {
+        if (creator == null){
+            throw new IllegalArgumentException("Field cannot be null or empty");
         }
-        this.whoisDoing = whoisDoing;
+        this.creator = creator;
     }
 
     //--------------------------------------- Setters End --------------------------------------------------------
@@ -99,8 +96,8 @@ public class TodoItem {
         return deadLine;
     }
 
-    public String getWhoisDoing() {
-        return whoisDoing;
+    public Person creator() {
+        return creator();
     }
 
 
@@ -114,7 +111,18 @@ public class TodoItem {
         return done;
     }
 
-    //----------------------- GETTERS END---------------------------------------------------------------------
+    @Override
+    public String toString() {
+        return "TodoItem{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", xtraInfo='" + xtraInfo + '\'' +
+                ", deadLine=" + deadLine +
+                ", whoisDoing='" + creator + '\'' +
+                ", done=" + done +
+                '}';
+    }
+//----------------------- GETTERS END---------------------------------------------------------------------
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 //----------------------- OVERRIDES---------------------------------------------------------------------
 
@@ -129,10 +137,6 @@ public class TodoItem {
         return super.equals(obj);
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 }
 
 
